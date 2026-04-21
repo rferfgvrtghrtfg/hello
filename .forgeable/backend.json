@@ -1,0 +1,10 @@
+{
+  "apiBaseUrl": "http://localhost:4010",
+  "backendProjectId": "c6a01081-c689-4b7d-823e-a1f06cd0e10c",
+  "linkedAt": 1776799443343,
+  "name": "aerial-cartridges",
+  "provider": "forgeable-backend",
+  "schemaName": "project_aerial_cartridges_c6a01081",
+  "slug": "aerial-cartridges",
+  "version": 1
+}

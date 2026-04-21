@@ -1,0 +1,3 @@
+-- Forgeable backend SQL lives here.
+-- When the AI creates backend tables through the standalone API,
+-- matching SQL and RLS policy files are written into this folder.

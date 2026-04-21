@@ -1,0 +1,24 @@
+project_id = "forgeable-project"
+
+[api]
+enabled = true
+port = 54321
+schemas = ["public", "storage", "graphql_public"]
+extra_search_path = ["public", "extensions"]
+
+[db]
+port = 54322
+major_version = 15
+
+[auth]
+site_url = "http://localhost:3000"
+additional_redirect_urls = ["http://localhost:3000", "http://localhost:8080"]
+jwt_expiry = 3600
+enable_signup = true
+enable_confirmations = false
+
+[functions.hello-world]
+verify_jwt = true
+
+[functions.send-welcome]
+verify_jwt = true

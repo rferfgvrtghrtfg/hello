@@ -45,12 +45,16 @@ const Index = () => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          "Prefer": "return=representation"
         },
-        body: JSON.stringify({ name: newName }),
+        body: JSON.stringify({ 
+          row: { name: newName }
+        }),
       });
       
       if (!response.ok) {
-        throw new Error("Failed to add data");
+        const errorData = await response.json();
+        throw new Error(errorData.error || "Failed to add data");
       }
       
       return response.json();
@@ -63,11 +67,11 @@ const Index = () => {
         description: "Datensatz wurde hinzugefügt",
       });
     },
-    onError: () => {
+    onError: (error: Error) => {
       toast({
         variant: "destructive",
         title: "Fehler",
-        description: "Datensatz konnte nicht hinzugefügt werden",
+        description: error.message,
       });
     },
   });
